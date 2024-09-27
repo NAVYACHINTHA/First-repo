@@ -1,0 +1,105 @@
+Git: Version Control System which tracks what changes, who made and when.
+
+Introduce yourself to git:  (This is one time activity. You can also change later)
+
+Set global user:
+1. git config --global user.name "Navya"
+2. git config --global user.email "navyachintha29@gmail.com"
+
+
+Set Local user:  (If you want to configure a different user name and email for each repository)
+1. git config user.name "Chintha"
+2. git config user.email "navyachintha01@gmail.com"
+
+
+To display the user details
+
+Global:
+1. git config --global user.name 
+2. git config --global user.email
+
+Local:
+1. git config --local user.name
+2. git config --local user.email
+
+
+Without mentioning --local and --global also you can get the name and email.
+Difference is whenever you are in the git repo, the local user name and email overrides the global values and outside of the repo you get global values
+
+
+
+To display all the configurations which are done on the Git:
+1. git config --list   
+2. git config --local --list
+
+
+
+To unset global user details:
+1. git config --global --unset user.name
+1. git config --global --unset user.email
+
+To unset Local user details:  (Execute commands in the repo)
+1. git config --unset user.name
+1. git config --unset user.email
+
+
+Points to remember:
+1. All git commands start with "git"
+2. You should introduce yourself to git.  
+3. Git works with repositories.
+4. Most of the git commands should run inside a git repository. 
+
+
+Create a repo:
+1. git init .   (here "." represents current directory)  [you can pass absolute path of the directory]
+
+                        ####################################################################
+
+Git Stages:
+1. Working directory(workspace) --->Staging Area (Index Area) ---> Repository (local repo or local 	VCS)
+
+when files are in working directory, they called as untracked files
+when files are in stagging area, they called as tracked files
+
+When you create a file in repo, it can only be tracked but it is not in repo.
+To move fiels from untracked to stagging area, run below commands:
+1. git add <filename>
+2. git add <filename1> <filename2>
+3. git add .     ( "." means all the files of the directory)
+4. git add --all   (all files)
+
+Git doesn't track empty directories by default.
+
+To Unstage the file from stagging area
+1. git rm --cached <filename>
+
+
+To move files to local repository:
+1. git commit <filename> -m <message write relevant message>
+2. git commit -m <message>                                  <-- to commit all files 
+
+
+To show current stage of repository:
+1. git status
+To show commit history:
+1. git log
+
+
+Compare code changes with different git stages:
+1.git diff           ( comparision b/w working directory and staging area)
+2.git diff --staged  ( comparision b/w staged area and local repo)
+3.git diff HEAD      (comparision b/w working directory and local repo)
+
++ and green color for addition
+- and red color for deletion
+
+1.git ls-files   To list all the files that are being tracked in your local repo regardless of any pending changes
+2. git rm -r --cached .   ( To empty the local repo)
+
+
+Comparision b/w commits:
+1. git diff <commit id> <commit id>
+
+a: latest commit
+b: previous commit
+
